@@ -85,25 +85,24 @@ const latestPost= async ()=>{
     const response= await fetch ('https://openapi.programming-hero.com/api/retro-forum/latest-posts')
     const data=await response.json();
     const latestPostItem = data;
-    console.log(latestPostItem);
-    // displayLatestPost(latestPostItem)
+    displayLatestPost(latestPostItem)
 }
 
 
-const displayLatestPost= postItem2 =>{
+const displayLatestPost= latestPostItem =>{
   //   console.log(post);
   
-  postItem2.forEach(post=>{
+  latestPostItem.forEach(post=>{
       // console.log(post);
   
-      const postContainer=document.getElementById('latest-card')
+      const postContainer2=document.getElementById('latest-card')
   
       const postCard2=document.createElement('div');
       postCard2.classList=`flex gap-4`;
   
       postCard2.innerHTML=`
       
-      <div class="card w-96 bg-base-100 shadow-xl p-5">
+      <div class="card w-full bg-base-100 shadow-xl p-5">
       <figure class="px-10 pt-10">
         <img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" class="rounded-xl" />
       </figure>
@@ -126,7 +125,9 @@ const displayLatestPost= postItem2 =>{
        </div>
     </div>
       `
+    postContainer2.append(postCard2)
   })
 }
+latestPost()
 
 
