@@ -8,11 +8,10 @@ const allPost= async ()=>{
 
 const displayPost= postItem =>{
 //   console.log(post);
-
+const postContainer=document.getElementById('card-container')
+postContainer.innerHTML=''
 postItem.forEach(post=>{
     // console.log(post);
-
-    const postContainer=document.getElementById('card-container')
 
     const postCard=document.createElement('div');
     postCard.classList=`rounded-xl p-5`;
@@ -22,8 +21,10 @@ postItem.forEach(post=>{
     <div class="bg-[#F3F3F5] flex gap-10 p-5 rounded-lg">
             <div>
 
-              <div class="avatar online">
-                <div class="w-20 h-20 rounded-full">
+              <div class="avatar">
+              <div class="bg-green-300 w-3 h-3 rounded-full absolute right-1">
+              </div>
+                <div class="w-20 h-20 rounded-full relative">
                   <img src="${post.image}" />
                 </div>
             </div>
@@ -129,6 +130,23 @@ const displayLatestPost= latestPostItem =>{
     postContainer2.append(postCard2)
   })
 }
-latestPost()
+latestPost();
+
+// Search Button
+
+const searchPost= async (searchValue)=>{
+  const response= await fetch (`https://openapi.programming-hero.com/api/retro-forum/posts?category=${searchValue}`)
+  const data=await response.json();
+  const postItem = data.posts;
+  displayPost(postItem)
+}
+
+
+
+const handleSearch = () =>{
+  const searchBox = document.getElementById('search-box');
+  const searchValue = searchBox.value;
+  searchPost(searchValue)
+}
 
 
