@@ -167,9 +167,6 @@ const loadingSpinner = (isLoading) =>{
   
 }
 
-function loader(){
- alert('jsj')
-}
 
 
 
