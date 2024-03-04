@@ -155,16 +155,18 @@ const handleSearch = () =>{
  
 }
 
-
 const loadingSpinner = (isLoading) =>{
   const spinnerLoad=document.getElementById('loading-spinner');
   if(isLoading){
     spinnerLoad.classList.remove('hidden');
   }
   else{
-    spinnerLoad.classList.add('hidden')
+    setTimeout(() => {
+      spinnerLoad.classList.add('hidden');
+    }, 2000);
+    
   }
-  
+ 
 }
 
 
