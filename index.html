@@ -68,7 +68,7 @@
           <div class="tooltip" data-tip="ADD YOUR ID">
             <button class=""><img src="./images/man.png" alt="" /></button>
           </div>
-          <div class="tooltip" data-tip="FLAGSHIP">
+          <div class="tooltip" data-tip="FAQ">
             <button class=""><img src="./images/flag.png" alt="" /></button>
           </div>
         </div>
@@ -109,8 +109,8 @@
               placeholder="Search here anything"
               class="input input-bordered rounded-[30px]"
             /><br /><br />
-            
-            <button onclick="handleSearch()"
+
+            <button onclick="handleSearch(loader,2000)"
               class="btn text-[#FFF] font-poppins font-bold bg-[#797DFC] rounded-[30px] border-none"
             >
               Search
@@ -158,8 +158,14 @@
 
       <section class="mx-auto">
 
+        <div id="loading-spinner" class="text-center my-40 hidden">
+          <span class="loading loading-spinner loading-lg"></span>
+        </div>
+
         <div class="flex">
           <div id="card-container" class="space-y-4">
+
+          
           </div>
            
 

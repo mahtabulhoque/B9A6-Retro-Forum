@@ -4,6 +4,7 @@ const allPost= async ()=>{
     const postItem = data.posts;
     // console.log(post);
     displayPost(postItem)
+    
 }
 
 const displayPost= postItem =>{
@@ -74,6 +75,8 @@ postItem.forEach(post=>{
     `
     postContainer.appendChild(postCard)
 })
+
+loadingSpinner(false);
 }
 
 
@@ -139,14 +142,35 @@ const searchPost= async (searchValue)=>{
   const data=await response.json();
   const postItem = data.posts;
   displayPost(postItem)
+  
 }
 
 
 
 const handleSearch = () =>{
+  loadingSpinner(true);
   const searchBox = document.getElementById('search-box');
   const searchValue = searchBox.value;
   searchPost(searchValue)
+ 
 }
+
+
+const loadingSpinner = (isLoading) =>{
+  const spinnerLoad=document.getElementById('loading-spinner');
+  if(isLoading){
+    spinnerLoad.classList.remove('hidden');
+  }
+  else{
+    spinnerLoad.classList.add('hidden')
+  }
+  
+}
+
+function loader(){
+ alert('jsj')
+}
+
+
 
 
