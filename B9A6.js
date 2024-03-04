@@ -104,23 +104,24 @@ const displayLatestPost= latestPostItem =>{
       
       <div class="card w-full bg-base-100 shadow-xl p-5">
       <figure class="px-10 pt-10">
-        <img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" class="rounded-xl" />
+        <img src="${post.cover_image}" alt="" class="rounded-xl" />
       </figure>
        <div class="flex item-center gap-3 py-3">
         <div>
           <img src="./images/date.png" alt="">
          </div>
-         <p class="text-[16px] text-[#12132D99]">29 January 2024</p>
+         <p class="text-[16px] text-[#12132D99]">${post?.author.posted_date}</p>
        </div>
      
-       <h2 class="text-[#12132D] text-[18px] font-extrabold py-2">What will a mars habitat force that impact in our daily life!!!</h2>
-       <p class="text-[16px] text-[#12132D99] py-2">Yes, you can run unit tests and view the results directly within the app. </p>
+       <h2 class="text-[#12132D] text-[18px] font-extrabold py-2">${post.title}</h2>
+
+       <p class="text-[16px] text-[#12132D99] py-2">${post.description}</p>
 
        <div class="flex item-center">
-        <div><img src="./images/flag.png" alt=""></div>
+        <div class="w-10 h-10 "><img src="${post.profile_image}" alt="" class="rounded-full"></div>
        <div>
-        <p class="text-[#12132D] font-bold text-[16px]">Cameron Williamson</p>
-        <p class="text-[#12132D] text-[18px] font-extrabold">Unknown</p>
+        <p class="text-[#12132D] font-bold text-[16px]">${post.author.name}</p>
+        <p class="text-[#12132D] text-[18px] font-extrabold">${post?.author?.designation}</p>
        </div>
        </div>
     </div>
